@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #F5B016; /* Bold Yellow/Orange from assets */
+  --color-secondary: #111111; /* Deep Black */
+  --color-cream: #F5F1E6; /* Cream / Light Beige */
+  
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-secondary font-sans antialiased;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap');
+
+@layer utilities {
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+    display: flex;
+    width: max-content;
+  }
+}
