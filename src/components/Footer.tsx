@@ -7,9 +7,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           <div className="space-y-8">
-            <span className="text-4xl font-black tracking-tighter">
-              B<span className="text-primary">rioche</span>
-            </span>
+            <img 
+              src="https://api.dicebear.com/7.x/initials/svg?seed=Brioche&backgroundColor=F5B016&textColor=111111&fontWeight=800" 
+              alt="Brioche Logo" 
+              className="h-16 w-auto object-contain"
+              referrerPolicy="no-referrer"
+            />
             <p className="text-cream/60 font-medium leading-relaxed">
               Elevating street food culture through premium ingredients and artisanal brioche bread.
             </p>

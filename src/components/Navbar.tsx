@@ -26,9 +26,12 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             className="flex-shrink-0 cursor-pointer"
             onClick={() => setPage('home')}
           >
-            <span className="text-3xl font-black tracking-tighter text-secondary">
-              B<span className="text-primary">rioche</span>
-            </span>
+            <img 
+              src="https://api.dicebear.com/7.x/initials/svg?seed=Brioche&backgroundColor=F5B016&textColor=111111&fontWeight=800" 
+              alt="Brioche Logo" 
+              className="h-12 w-auto object-contain"
+              referrerPolicy="no-referrer"
+            />
           </div>
 
           {/* Desktop Nav */}
