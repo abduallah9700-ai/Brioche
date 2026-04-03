@@ -1,6 +1,4 @@
-import { motion } from 'motion/react';
 import { Menu as MenuIcon, X } from 'lucide-react';
-import { useState } from 'react';
 import { Page } from '../types';
 
 interface NavbarProps {
@@ -9,8 +7,6 @@ interface NavbarProps {
 }
 
 export default function Navbar({ currentPage, setPage }: NavbarProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const navLinks: { name: string; id: Page }[] = [
     { name: 'Home', id: 'home' },
     { name: 'Menu', id: 'menu' },
@@ -27,9 +23,9 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             onClick={() => setPage('home')}
           >
             <img 
-              src="https://api.dicebear.com/7.x/initials/svg?seed=Brioche&backgroundColor=F5B016&textColor=111111&fontWeight=800" 
+              src="/logo__2_-removebg-preview.png" 
               alt="Brioche Logo" 
-              className="h-12 w-auto object-contain"
+              className="h-16 md:h-20 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -49,41 +45,41 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Using Checkbox Hack */}
           <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-secondary p-2"
-            >
-              {isMenuOpen ? <X size={28} /> : <MenuIcon size={28} />}
-            </button>
+            <label htmlFor="menu-toggle" className="cursor-pointer p-2 text-secondary">
+              <input type="checkbox" id="menu-toggle" className="hidden peer" />
+              <div className="peer-checked:hidden">
+                <MenuIcon size={28} />
+              </div>
+              <div className="hidden peer-checked:block">
+                <X size={28} />
+              </div>
+              
+              {/* Mobile Nav Overlay */}
+              <div className="fixed top-20 left-0 w-full bg-cream border-b border-black/5 px-4 pt-2 pb-6 space-y-4 hidden peer-checked:block">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.id}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setPage(link.id);
+                      // Uncheck the checkbox to close menu
+                      const checkbox = document.getElementById('menu-toggle') as HTMLInputElement;
+                      if (checkbox) checkbox.checked = false;
+                    }}
+                    className={`block w-full text-left text-lg font-black uppercase tracking-widest ${
+                      currentPage === link.id ? 'text-primary' : 'text-secondary'
+                    }`}
+                  >
+                    {link.name}
+                  </button>
+                ))}
+              </div>
+            </label>
           </div>
         </div>
       </div>
-
-      {/* Mobile Nav */}
-      {isMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-cream border-b border-black/5 px-4 pt-2 pb-6 space-y-4"
-        >
-          {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => {
-                setPage(link.id);
-                setIsMenuOpen(false);
-              }}
-              className={`block w-full text-left text-lg font-black uppercase tracking-widest ${
-                currentPage === link.id ? 'text-primary' : 'text-secondary'
-              }`}
-            >
-              {link.name}
-            </button>
-          ))}
-        </motion.div>
-      )}
     </nav>
   );
 }

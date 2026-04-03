@@ -8,9 +8,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           <div className="space-y-8">
             <img 
-              src="https://api.dicebear.com/7.x/initials/svg?seed=Brioche&backgroundColor=F5B016&textColor=111111&fontWeight=800" 
+              src="/logo__2_-removebg-preview.png" 
               alt="Brioche Logo" 
-              className="h-16 w-auto object-contain"
+              className="h-24 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
             <p className="text-cream/60 font-medium leading-relaxed">
