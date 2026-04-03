@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ShoppingBag, ArrowLeft, Star, Clock, Flame } from 'lucide-react';
+import { ArrowLeft, Star, Clock, Flame } from 'lucide-react';
 import { MenuItem } from '../types';
 
 interface ProductDetailsProps {
@@ -53,13 +53,9 @@ export default function ProductDetails({ item, onBack }: ProductDetailsProps) {
               {item.name}
             </h1>
             
-            <p className="text-2xl font-black text-primary mb-10">${item.price}</p>
-            
-            <p className="text-xl text-secondary/60 font-medium mb-12 leading-relaxed">
-              {item.description} Our signature brioche bun is toasted to perfection, providing a sweet and buttery foundation for our premium ingredients.
-            </p>
+            <p className="text-2xl font-black text-primary mb-12">${item.price}</p>
 
-            <div className="grid grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-2xl text-center">
                 <Clock className="mx-auto mb-2 text-primary" />
                 <p className="text-xs font-black uppercase tracking-widest text-secondary/40">Prep Time</p>
@@ -76,11 +72,6 @@ export default function ProductDetails({ item, onBack }: ProductDetailsProps) {
                 <p className="font-bold text-secondary">4.9/5</p>
               </div>
             </div>
-
-            <button className="w-full bg-secondary text-cream py-6 rounded-3xl font-black text-2xl flex items-center justify-center gap-4 hover:bg-primary hover:text-secondary transition-all shadow-xl">
-              <ShoppingBag size={28} />
-              ADD TO ORDER
-            </button>
           </motion.div>
         </div>
       </div>

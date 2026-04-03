@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ShoppingBag, Menu as MenuIcon, X } from 'lucide-react';
+import { Menu as MenuIcon, X } from 'lucide-react';
 import { useState } from 'react';
 import { Page } from '../types';
 
@@ -44,10 +44,6 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
                 {link.name}
               </button>
             ))}
-            <button className="bg-secondary text-cream px-6 py-2 rounded-full font-bold text-sm hover:bg-primary hover:text-secondary transition-all flex items-center gap-2">
-              <ShoppingBag size={18} />
-              ORDER NOW
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -83,10 +79,6 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
               {link.name}
             </button>
           ))}
-          <button className="w-full bg-secondary text-cream px-6 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2">
-            <ShoppingBag size={20} />
-            ORDER NOW
-          </button>
         </motion.div>
       )}
     </nav>

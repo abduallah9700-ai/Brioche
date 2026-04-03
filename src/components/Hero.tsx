@@ -36,15 +36,12 @@ export default function Hero({ onOrderClick }: HeroProps) {
               Premium street food crafted with our signature golden brioche buns.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
+              <button 
                 onClick={onOrderClick}
-                className="bg-secondary text-cream px-10 py-5 rounded-full font-black text-xl hover:scale-105 transition-transform flex items-center justify-center gap-3 group"
+                className="bg-secondary text-cream px-10 py-5 rounded-full font-black text-xl hover:bg-primary hover:text-secondary transition-all flex items-center justify-center gap-3 group"
               >
-                ORDER NOW
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="bg-cream/20 backdrop-blur-md border-2 border-secondary text-secondary px-10 py-5 rounded-full font-black text-xl hover:bg-cream/30 transition-all">
                 VIEW MENU
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </motion.div>
