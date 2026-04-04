@@ -23,8 +23,8 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             onClick={() => setPage('home')}
           >
             <img 
-              src="/logo__2_-removebg-preview.png" 
-              alt="" 
+              src="/logo.png" 
+              alt="Brioche Logo" 
               className="h-16 md:h-20 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
