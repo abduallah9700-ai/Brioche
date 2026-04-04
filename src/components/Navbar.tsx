@@ -17,7 +17,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             onClick={() => setPage('home')}
           >
             <img 
-              src="https://mir-s3-cdn-cf.behance.net/user/230/1724481008265865.69d1307962d41.png" 
+              src="logo.png" 
               alt="Brioche Logo" 
               className="h-16 md:h-20 w-auto object-contain"
               referrerPolicy="no-referrer"
