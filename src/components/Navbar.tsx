@@ -24,7 +24,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
           >
             <img 
               src="/logo.png" 
-              alt="" 
+              alt="logo" 
               className="h-16 md:h-20 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
