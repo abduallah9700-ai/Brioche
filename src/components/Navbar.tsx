@@ -1,6 +1,5 @@
 import { Menu as MenuIcon, X } from 'lucide-react';
 import { Page } from '../types';
-import logo from '../assets/logo.png';
 
 interface NavbarProps {
   currentPage: Page;
@@ -24,7 +23,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             onClick={() => setPage('home')}
           >
             <img 
-              src={logo} 
+              src="/logo.png" 
               alt="Brioche Logo" 
               className="h-16 md:h-20 w-auto object-contain"
               referrerPolicy="no-referrer"

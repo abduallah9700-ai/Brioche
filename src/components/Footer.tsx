@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Instagram, Twitter, Facebook, MapPin, Phone, Clock } from 'lucide-react';
-import logo from '../assets/logo.png';
 
 export default function Footer() {
   return (
@@ -9,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           <div className="space-y-8">
             <img 
-              src={logo} 
+              src="/logo.png" 
               alt="Brioche Logo" 
               className="h-24 w-auto object-contain"
               referrerPolicy="no-referrer"
