@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="space-y-8">
             <img 
               src="/logo.png" 
-              alt="Brioche Logo" 
+              alt="" 
               className="h-24 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
